@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini - Ecommerce</title>
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">Mini - Ecommerce</div>
+        <button class="cart-btn" id="cartBtn">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar produtos..." />
+      <button id="searchBtn">Buscar</button>
+    </div>
+
+    <div class="container">
+      <div class="admin-panel">
+        <h2>Painel Administrativo</h2>
+        <form id="productForm">
+          <input type="hidden" id="productId" />
+          <div class="form-group">
+            <label for="productName">Nome do Produto</label>
+            <input type="text" id="productName" required />
+          </div>
+          <div class="form-group">
+            <label for="productPrice">Preço (R$)</label>
+            <input
+              type="number"
+              id="productPrice"
+              min="0"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="productStock">Estoque</label>
+            <input type="number" id="productStock" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="productImage">URL da Imagem</label>
+            <input type="text" id="productImage" required />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="saveProduct">
+              Salvar
+            </button>
+            <button type="button" class="btn btn-danger" id="clearForm">
+              Limpar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <h2>Produtos</h2>
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h3>Seu Carrinho</h3>
+        <button class="close-cart" id="closeCart">&times;</button>
+      </div>
+      <div class="cart-items" id="cartItems"></div>
+      <div class="cart-summary">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span id="cartTotal">R$ 0,00</span>
+        </div>
+        <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+      </div>
+    </div>
+
+    <div class="modal" id="confirmationModal">
+      <div class="modal-header">
+        <h3>Compra Finalizada!</h3>
+        <button class="close-modal" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>
+          Sua compra foi concluída com sucesso. Obrigado por comprar conosco!
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="confirmClose">OK</button>
+      </div>
+    </div>
+
+    <script src="modules/api.js"></script>
+    <script src="modules/products.js"></script>
+    <script src="modules/cart.js"></script>
+    <script src="modules/ui.js"></script>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
