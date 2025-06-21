@@ -104,7 +104,3 @@ graph TD
 1. Clone o repositório
 2. Abra o arquivo `index.html` no navegador
 3. Interaja com a interface
-
-## 📌 Sobre (About)
-
-**Pure JS E-commerce**: A complete frontend e-commerce solution using only vanilla JavaScript, HTML5 and CSS3. Features include localStorage for data persistence, responsive design, product management (CRUD), shopping cart and simulated checkout. No frameworks or libraries required.
